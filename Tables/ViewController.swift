@@ -20,11 +20,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         devices = fetchDevices()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func configureViewController() {
         view.backgroundColor = .systemPink
+        title = "Devices"
     }
     
     private func configureTableView() {
@@ -77,6 +80,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.set(device: device)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = devices[indexPath.row]
+        let destinationVC = DeviceDetailsViewController(device: device)
+        
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
 
