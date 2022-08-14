@@ -16,6 +16,7 @@ class DeviceDetailsViewController: UIViewController {
     
     init(device: Device) {
         super.init(nibName: nil, bundle: nil)
+        
         self.device = device
     }
     
@@ -33,8 +34,8 @@ class DeviceDetailsViewController: UIViewController {
     }
     
     private func configureVC() {
+        navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = false
         title = device.name
         categoryLabel.text = "Category - \(device.category)"
         descriptionLabel.text = device.description

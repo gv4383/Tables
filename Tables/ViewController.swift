@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         devices = fetchDevices()
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func configureViewController() {
