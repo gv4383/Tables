@@ -86,6 +86,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let device = devices[indexPath.row]
         let destinationVC = DeviceDetailsViewController(device: device)
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
