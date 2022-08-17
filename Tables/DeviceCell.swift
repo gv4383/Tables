@@ -29,6 +29,8 @@ class DeviceCell: UITableViewCell {
         addSubview(deviceLabel)
         deviceLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        accessoryType = .disclosureIndicator
+        
         let padding: CGFloat = 12
         
         NSLayoutConstraint.activate([
